@@ -1,3 +1,12 @@
+'''
+Here’s a brief explanation of what the script does:
+1. It imports necessary modules and classes.
+2. It creates instances of the Color and Edge classes, which are used to extract color and edge features from images, respectively.
+3. It defines a function feature_extraction that takes a descriptor and an image path, reads the image, extracts features using the descriptor, and returns the image ID and the features.
+4. It defines a function index_fast that takes an index file and a descriptor, gets a list of all files in the dataset, and uses multiprocessing to extract features from all images in the dataset. It then writes the image ID and the features to the index file.
+5. In the main part of the script, it checks if the dataset exists. If the color index file does not exist, it opens the file, extracts color features from all images in the dataset, and writes them to the file. It does the same for the edge index file.
+'''
+
 import multiprocessing
 from functools import partial
 from glob import glob
